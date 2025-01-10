@@ -10,20 +10,10 @@ import SwiftData
 
 @main
 struct PokeAppApp: App {
-//    let container: ModelContainer
 
     var body: some Scene {
         WindowGroup {
             RootView()
         }
-//        .modelContainer(container)
     }
-
-//    init() {
-//          do {
-//              container = try ModelContainer(for: PokemonOfTheDayEntity.self)
-//          } catch {
-//              fatalError("Failed to create ModelContainer for PokemonOfTheDayEntity.")
-//          }
-//      }
 }

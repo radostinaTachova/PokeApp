@@ -24,7 +24,7 @@ struct PokemonOfTheDayView: View {
 
     var body: some View {
         VStack {
-            header
+            HeaderView(title: "Pokemon of the Day")
             HStack(alignment: .top ,spacing: 0) {
                 imageView
                 nameTitle
@@ -39,18 +39,7 @@ struct PokemonOfTheDayView: View {
         }
 
     }
-
-    var header: some View {
-        HStack {
-            Text("Pokemon Of The day")
-                .font(.title)
-                .foregroundStyle(Color.white)
-        }
-        .frame(maxWidth: .infinity, minHeight: 100, alignment: .bottomLeading)
-        .padding([.bottom, .leading], 20)
-        .background(Color(.primary))
-    }
-
+    
     var nameTitle: some View {
         Text(" \(pokemonOfTheDayViewModel?.pokemon?.name ?? "none")")
             .textCase(.uppercase)
@@ -86,6 +75,6 @@ struct PokemonOfTheDayView: View {
 
 }
 
-//#Preview {
-//    PokemonOfTheDayView()
-//}
+#Preview {
+    PokemonOfTheDayView()
+}

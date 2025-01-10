@@ -12,16 +12,21 @@ struct HomeView: View {
     @Environment(NavigationCoordinator.self) private var coordinator
 
     var body: some View {
-        Text("HOME!")
-        Button("Go The poke HISTORY") {
-            coordinator.navigate(to: .home(.history))
-        }
-        Button("POKEMON"){
-            coordinator.navigate(to: .home(.pokemonOfTheDay))
-        }
-        Button("GAME") {
-            coordinator.navigate(to: .game)
-        }
+        VStack(alignment: .center) {
+            HeaderView(title: "Home")
+
+            
+
+            Button("Go The poke HISTORY") {
+                coordinator.navigate(to: .home(.history))
+            }
+            Button("POKEMON"){
+                coordinator.navigate(to: .home(.pokemonOfTheDay))
+            }
+            Button("GAME") {
+                coordinator.navigate(to: .game)
+            }
+        }.frame(maxHeight: .infinity, alignment: .topLeading)
     }
 }
 
