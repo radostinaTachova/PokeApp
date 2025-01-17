@@ -10,3 +10,11 @@ struct Pokemon {
     let height: Int
     let imageUrl: String
 }
+
+extension PokemonOfTheDayEntity {
+    func toModel() -> Pokemon {
+        Pokemon(name: self.name,
+                height: self.height,
+                imageUrl: self.imageUrl)
+    }
+}

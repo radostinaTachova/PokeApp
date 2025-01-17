@@ -22,11 +22,12 @@ class PokemonOfTheDayEntity {
     }
 }
 
-//Igual esto hay que moverlo a la capa de vista?¿?
-extension PokemonOfTheDayEntity {
-    func toModel() -> Pokemon {
-        Pokemon(name: self.name,
-                height: self.height,
-                imageUrl: self.imageUrl)
+
+
+//Mappers, esto tendría que ir en otro lugar.
+
+extension PokemonDTO {
+    func toPersistantEntity() -> PokemonOfTheDayEntity {
+        PokemonOfTheDayEntity(name: self.name, height: self.height, imageUrl: self.sprites.frontDefault, date: "")
     }
 }

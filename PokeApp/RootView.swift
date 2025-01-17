@@ -9,15 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct RootView: View {
-    @State private var coordinator = NavigationCoordinator() //StateObject si se usa observableObject
-
-    //enum for Tabs, add other tabs if needed
-    //Pensar como sería la mejor manera de relacionar RootView con la tabView, igual habría que sacar la tabview de aqui y separar los dos conceptos, ¿o serían el mismo concepto?
-
+    @State private var coordinator = NavigationCoordinator()
 
     var body: some View {
         TabView(selection: $coordinator.selectedTab) {
-            //Sacar una funcion que cree estos navigationstack como views
+
             NavigationStack(path: $coordinator.homePath) {
                 HomeView().navigationDestination(for: HomeRoute.self) { route in
                     route.destination
@@ -37,7 +33,7 @@ struct RootView: View {
             }
             .tag(Tab.game)
         }
-        .environment(coordinator) //Pasamos el coordinador global
+        .environment(coordinator) 
         .onChange(of: coordinator.selectedTab, {
             coordinator.resetTab(coordinator.selectedTab)
         })
