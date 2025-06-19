@@ -28,6 +28,6 @@ class PokemonOfTheDayEntity {
 
 extension PokemonDTO {
     func toPersistantEntity() -> PokemonOfTheDayEntity {
-        PokemonOfTheDayEntity(name: self.name, height: self.height, imageUrl: self.sprites.frontDefault, date: "")
+        PokemonOfTheDayEntity(name: self.name, height: self.height, imageUrl: self.sprites.frontDefault, date: Calendar.currentDateWithPokeFormat ?? "")
     }
 }

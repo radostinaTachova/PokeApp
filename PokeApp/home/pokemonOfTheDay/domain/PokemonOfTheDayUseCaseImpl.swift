@@ -40,7 +40,7 @@ struct PokemonOfTheDayUseCaseImpl: PokemonOfTheDayUseCase {
 extension PokemonOfTheDayUseCaseImpl {
     private mutating func updatePokemonData() {
         pokemon = dataService.fetchPokemon()
-        guard let pokemonOfTheDay = pokemon.first, pokemonOfTheDay.isTodayPokemon else{
+        guard let pokemonOfTheDay = pokemon.first, !pokemonOfTheDay.isTodayPokemon else{
             print("There is not pokemon to update")
             return
         }
