@@ -10,10 +10,10 @@ import Foundation
 
 @Observable
 class PokeTypesViewModel {
-    private var userCase: TypesUserCase
+    private var userCase: TypesUseCase
     var types: [PokeType]? = nil
 
-    init(_ userCase: TypesUserCase) {
+    init(_ userCase: TypesUseCase) {
         self.userCase = userCase
         fetchAndUpdateTypes()
     }

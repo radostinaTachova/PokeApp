@@ -5,6 +5,6 @@
 //  Created by Radostina Tachova Chergarska on 10/1/25.
 //
 
-protocol PokemonOfTheDayUserCase {
+protocol PokemonOfTheDayUseCase {
     mutating func execute() async -> PokemonOfTheDayEntity?
 }

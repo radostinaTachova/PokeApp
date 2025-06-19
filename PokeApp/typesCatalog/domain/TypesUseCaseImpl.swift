@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct TypesUserCaseImpl: TypesUserCase {
+struct TypesUseCaseImpl: TypesUseCase {
 
     private var pokemon: [PokemonOfTheDayEntity] = []
     private var pokemonRepository: PokemonRepository

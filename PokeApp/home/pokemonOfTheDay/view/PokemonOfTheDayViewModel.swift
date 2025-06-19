@@ -10,10 +10,10 @@ import SwiftData
 
 @Observable
 class PokemonOfTheDayViewModel {
-    private var userCase: PokemonOfTheDayUserCase
+    private var userCase: PokemonOfTheDayUseCase
     var pokemon: Pokemon? = nil
 
-    init(_ pokemonOfTheDayUserCase: PokemonOfTheDayUserCase) {
+    init(_ pokemonOfTheDayUserCase: PokemonOfTheDayUseCase) {
         self.userCase = pokemonOfTheDayUserCase
         fetchAndUpdatePokemon()
     }

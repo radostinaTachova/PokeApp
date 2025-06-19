@@ -7,7 +7,7 @@
 import SwiftData
 import SwiftUI
 
-struct PokemonOfTheDayUserCaseImpl: PokemonOfTheDayUserCase {
+struct PokemonOfTheDayUseCaseImpl: PokemonOfTheDayUseCase {
 
     private var pokemon: [PokemonOfTheDayEntity] = []
     private var pokemonRepository: PokemonRepository
@@ -37,7 +37,7 @@ struct PokemonOfTheDayUserCaseImpl: PokemonOfTheDayUserCase {
     }
 }
 
-extension PokemonOfTheDayUserCaseImpl {
+extension PokemonOfTheDayUseCaseImpl {
     private mutating func updatePokemonData() {
         pokemon = dataService.fetchPokemon()
         guard let pokemonOfTheDay = pokemon.first, pokemonOfTheDay.isTodayPokemon else{

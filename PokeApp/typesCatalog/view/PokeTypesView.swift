@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
+import Factory
 
 struct PokeTypesView: View {
     
-    @State var viewModel: PokeTypesViewModel
-    @State private var selectedType: TypeDTO? = nil
-
+    @Injected(\.pokeTypesViewModel) var viewModel
 
     // Diseño: 2 columnas
     private let columns = [

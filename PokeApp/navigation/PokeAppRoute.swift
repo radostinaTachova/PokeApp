@@ -25,7 +25,7 @@ enum PokeAppRoute: Hashable {
         case .game:
             GameView()
         case .pokeType:
-            PokeTypesView(viewModel: PokeTypesViewModel(TypesUserCaseImpl(pokemonRepository: PokemonRepositoryImpl())))
+            PokeTypesView()
         }
     }
 

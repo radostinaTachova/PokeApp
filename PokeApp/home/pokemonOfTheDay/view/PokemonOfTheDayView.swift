@@ -15,7 +15,7 @@ struct PokemonOfTheDayView: View {
     @MainActor
     private func initializeViewModel() {
         pokemonOfTheDayViewModel = PokemonOfTheDayViewModel(
-            PokemonOfTheDayUserCaseImpl(
+            PokemonOfTheDayUseCaseImpl(
                 pokemonRepository: PokemonRepositoryImpl(),
                 dataService: SwiftDataService.shared // Asegurado en MainActor
             )

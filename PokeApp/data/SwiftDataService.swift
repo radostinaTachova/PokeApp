@@ -6,7 +6,7 @@
 //
 import SwiftData
 
-//RADOS añadir un protocolo aqui
+//añadir un protocolo aqui
 class SwiftDataService {
     private let modelContainer: ModelContainer
     private let modelContext: ModelContext
