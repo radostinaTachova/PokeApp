@@ -23,7 +23,7 @@ struct RootView: View {
             }
             .tag(Tab.home)
 
-            PokeTypesView().tabItem {
+            PokeTypesView(viewModel: PokeTypesViewModel(TypesUserCaseImpl(pokemonRepository: PokemonRepositoryImpl()))).tabItem {
                 Label("types", systemImage: "tray.2.fill")
             }
             .tag(Tab.pokeTypes)

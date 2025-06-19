@@ -7,7 +7,7 @@
 import Foundation
 
 struct PokemonRepositoryImpl: PokemonRepository {
-
+ 
     let baseURL = APIConfiguration.baseURL
     let apiSession: APIClient
 
@@ -28,4 +28,20 @@ struct PokemonRepositoryImpl: PokemonRepository {
             throw PokeError.invalidData
         }
     }
+    
+    func getAllPokemonTypes() async throws -> [ResultTypeDTO] {
+        let enpoint = "type"
+        let (data , _) = try await apiSession.get(enpoint: enpoint)
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try decoder.decode(PaginatedTypeListDTO.self, from: data).results
+        } catch {
+            throw PokeError.invalidData
+        }
+
+    }
+    
+    
+ 
 }

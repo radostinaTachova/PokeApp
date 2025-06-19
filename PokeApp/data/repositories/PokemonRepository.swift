@@ -7,5 +7,6 @@
 
 protocol PokemonRepository {
     func getPokemon(with id: Int) async throws -> PokemonDTO
+    func getAllPokemonTypes() async throws -> [ResultTypeDTO]
 }
 
